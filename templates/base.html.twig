@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Developer Test - Arca{% endblock %}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+    <link rel="stylesheet" href="http://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+    {% block stylesheets %}{% endblock %}
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-expand-lg navbar-light bg-dark"
+      style="height: 70px;"
+    >
+      <a class="navbar-brand text-white" href="#">Developer Test (Arca)</a>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent"></div>
+      <ul class="nav navbar-nav navbar-right">
+        {% if app.user %}
+        <li><a class="nav-link text-white" href="{{ path('list') }}">Companies List</a></li>
+        <li><a class="nav-link text-white" href="{{ path('new_company') }}">New Company</a></li>
+        <li><a class="nav-link text-white" href="{{ path('new_category') }}">New Category</a></li>
+        <li><a class="nav-link text-white" href="{{ path('app_logout') }}">Logout</a></li>
+        {% else %}
+        <li><a class="nav-link text-white" href="{{ path('app_login') }}">Login</a></li>
+        <li>
+          <a class="nav-link text-white" href="{{ path('registration') }}">Register</a>
+        </li>
+        {% endif %}
+      </ul>
+    </nav>
+    {% block body %}{% endblock %} {% block javascripts %}{% endblock %}
+  </body>
+</html>
+
+<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+
+<script>
+
+    $('select[data-select="true"]').select2();
+
+    {# $('input[data-mask="true"]').mask('(00)00000-0000'); #}
+
+
+</script>

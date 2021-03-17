@@ -1,0 +1,53 @@
+{# templates/category/index.html.twig #} {% extends 'base.html.twig' %} {%
+block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 ml-md-auto">
+            <div class="card bg-light mb-3 mt-5" style="width: 800px">
+                <div class="card-header bg-primary">
+                    <strong>
+                        <span class="text-white">
+                            Register a new category
+                        </span>
+                    </strong>
+                </div>
+                <div class="card-body">
+                    {{ form_start(form) }}
+                        <div class="form_group">
+                            <div class="row">
+                                <div class="col-md-10 mb-3">
+                                    {{ form_row(form.name, {'attr': {'class': 'form-control'}}) }}
+                                </div>
+                                <div class="col-md-2">
+                                    <button type="submit" class="btn btn-primary">
+                                    <i class="fa fa-btn fa-edit"></i> Create
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    {{ form_end(form) }}
+                </div>
+            </div>
+            <div class="card bg-light mb-3 mt-5" style="width: 800px">
+                <div class="card-header bg-primary">
+                    <strong>
+                        <span class="text-white">
+                            Categories
+                        </span>
+                    </strong>
+                </div>
+                <div class="card-body">
+                    <h1>
+                        {% if categories %}
+                            {% for category in categories %}
+                                <span class="badge badge-pill badge-bg badge-success">{{ category.name }}</span>
+                            {% endfor %}
+                        {% endif %}
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

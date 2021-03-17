@@ -1,0 +1,71 @@
+{# templates/registration/index.html.twig #} {% extends 'base.html.twig' %} {%
+block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 ml-md-auto">
+            <div class="card bg-light mb-3 mt-5" style="width: 800px">
+                <div class="card-header bg-primary">
+                    <strong>
+                        <span class="text-white">
+                            Register a new company
+                        </span>
+                    </strong>
+                </div>
+                <div class="card-body">
+                    {{ form_start(form) }}
+                    <div class="form_group">
+                        <div class="col-md-12 mb-3">
+                            {{ form_row(form.name, {'attr': {'class': 'form-control'}}) }}
+                        </div>
+                    </div>
+                    <div class="form_group">
+                        <div class="col-md-12 mb-3">
+                            {{ form_row(form.phone, {'attr': {'class': 'form-control'}}) }}
+                        </div>
+                    </div>
+                    <div class="form_group">
+                        <div class="col-md-12 mb-3">
+                            {{ form_row(form.address, {'attr': {'class': 'form-control'}}) }}
+                        </div>
+                    </div>
+                    <div class="form_group">
+                        <div class="col-md-12 mb-3">
+                            {{ form_row(form.zip_code, {'attr': {'class': 'form-control'}}) }}
+                        </div>
+                    </div>
+                    <div class="form_group">
+                        <div class="col-md-12 mb-3">
+                            {{ form_row(form.city, {'attr': {'class': 'form-control'}}) }}
+                        </div>
+                    </div>
+                    <div class="form_group">
+                        <div class="col-md-12 mb-3">
+                            {{ form_row(form.state, {'attr': {'class': 'form-control'}}) }}
+                        </div>
+                    </div>
+                    <div class="form_group">
+                        <div class="col-md-12 mb-3">
+                            {{ form_row(form.description, {'attr': {'class': 'form-control'}}) }}
+                        </div>
+                    </div>
+                    <div class="form_group">
+                        <div class="col-md-12 mb-3">
+                            {{ form_row(form.id, {'label': 'Categories', 'attr': {'class': 'form-control'}}) }}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-8 col-md-offset-4" style="margin-top:5px;">
+                            <button type="submit" class="btn btn-primary">
+                            <i class="fa fa-btn fa-user"></i> Create
+                            </button>
+                        </div>
+                    </div>
+                    {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

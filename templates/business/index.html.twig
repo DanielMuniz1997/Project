@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 ml-md-auto">
+            <div class="card bg-light mb-3 mt-5" style="width: 800px">
+                <div class="card-body">
+                    <div class="card shadow rounded">
+                        <div class="card-header bg-primary">
+                            <strong>
+                                <span class="text-white">
+                                    Company #{{ company.id }}
+                                </span>
+                            </strong>
+                        </div>
+                        <div class="card-body">
+                            <div class="row mt-2">
+                                <div class="col-6">
+                                    <strong>Name:</strong> {{ company.name }}
+                                </div>
+                                <div class="col-6">
+                                    <strong>Phone:</strong> {{ company.phone }}
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-6">
+                                    <strong>Address:</strong> {{ company.address }}
+                                </div>
+                                <div class="col-6">
+                                    <strong>City:</strong> {{ company.city }} ({{ company.state }})
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-12">
+                                    <strong>Description:</strong> {{ company.description }}
+                                </div>
+                            </div>
+                            <hr>
+                            {% if categories %}
+                                <h1>
+                                    {% for category in categories %}
+                                        <span class="badge badge-pill badge-bg badge-success">{{ category }}</span>
+                                    {% endfor %}
+                                </h1>
+                            {% else %}
+                                <div class="alert alert-warning text-center" role="alert">no category assigned to this company</div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
