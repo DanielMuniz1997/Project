@@ -40,7 +40,7 @@ class RegistrationController extends AbstractController
         if ($data){
 
             if ($data['user']['password']['first'] != $data['user']['password']['second']){
-                $errors[] = "As senhas não batem";
+                $errors[] = "password do not match";
             }
 
             else if ($form->isSubmitted() && $form->isValid()) {

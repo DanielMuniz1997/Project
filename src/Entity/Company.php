@@ -59,7 +59,7 @@ class Company
     /**
      * Many Users have Many Groups.
      * @ORM\ManyToMany(targetEntity="Category", inversedBy="members")
-     * @ORM\JoinTable(name="company_category")
+     * @ORM\JoinTable(name="company_categories")
      */
     private $categories;
 
